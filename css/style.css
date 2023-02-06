@@ -5,6 +5,7 @@
 /* background 1 #ffffff */
 /* background 2 #F5F4FA */
 /* background 3 #2F303A */
+/* icon primary #AFB1B8 */
 
 :root {
     --primary-text-color: #757575;
@@ -14,6 +15,7 @@
     --secondary-button-color: #F5F4FA;
     --wh-text-color: #ffffff;
     --tertiary-bg-color: #2F303A;
+    --icon-primary-color: #AFB1B8;
 }
 
 a {
@@ -104,6 +106,7 @@ body {
 .button-secondary:focus {
     color: var(--wh-text-color);
     background-color: var(--accent);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Wrapper */
@@ -176,12 +179,11 @@ body {
 }
 
 .contacts-bar {
-    display: block;
+
     padding-top: 32px;
     padding-bottom: 31px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 50px;
 }
 
@@ -192,8 +194,26 @@ body {
     letter-spacing: 0.02em;
     padding-top: 32px;
     padding-bottom: 31px;
+
     text-decoration: none;
     color: var(--primary-text-color);
+}
+
+.wrapper-mail-container-vector {
+
+    margin-right: 10px;
+    fill: var(--primary-text-color);
+}
+
+
+
+.wrapper-tel-container-vector {
+    margin-right: 10px;
+    fill: var(--primary-text-color);
+}
+
+.wrapper-tel-container-vector:hover {
+    fill: var(--accent);
 }
 
 .contacts-bar-tel {
@@ -213,10 +233,18 @@ body {
     color: var(--accent);
 }
 
+.contacts-bar-mail-to:hover .wrapper-mail-container-vector {
+    fill: var(--accent);
+}
+
 .contacts-bar-mail-to:hover,
 .contacts-bar-mail-to:focus {
     cursor: pointer;
     color: var(--accent);
+}
+
+.contacts-bar-tel:hover .wrapper-tel-container-vector {
+    fill: var(--accent);
 }
 
 .contacts-bar-tel:hover,
@@ -232,6 +260,14 @@ body {
     text-align: center;
     padding-top: 200px;
     padding-bottom: 200px;
+    flex-grow: 1;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../img/hero-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    object-fit: none;
+
 }
 
 .hero {
@@ -287,6 +323,21 @@ body {
 .our-peculiarities-container {
     padding-top: 94px;
     padding-bottom: 94px;
+}
+
+.our-peculiarities-vector-container {
+    width: 270px;
+    height: 120px;
+    background-color: var(--secondary-button-color);
+    border-radius: 4px;
+    margin-bottom: 30px;
+    padding: 25px 100px;
+}
+
+.our-peculiarities-vector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .our-peculiarities {
@@ -358,6 +409,8 @@ body {
     color: var(--title-text-color)
 }
 
+
+
 .our-team-list-header {
     font-weight: 500;
     font-size: 16px;
@@ -369,14 +422,13 @@ body {
 
 .our-team-container-list {
     display: flex;
-    align-items: stretch;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     gap: 30px;
 }
 
 .our-team-cards {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 30px 32px;
     width: 270px;
     text-align: center;
     background-color: var(--primary-bg-color);
@@ -387,9 +439,91 @@ body {
     font-weight: 400;
     font-size: 14px;
     line-height: 1.875;
-    letter-spacing: 0.03em;
+    padding-bottom: 16px;
     color: var(--primary-text-color);
 }
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.socials-item {}
+
+.socials-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 44px;
+    height: 44px;
+
+    background-color: var(--primary-bg-color);
+    border-radius: 50%;
+}
+
+.socials-link:hover {
+    background-color: var(--accent);
+}
+
+.socials-icon {
+    fill: var(--icon-primary-color);
+}
+
+.socials-link:hover .socials-icon {
+    fill: var(--wh-text-color);
+}
+
+
+
+/* Regular Clients */
+
+.regular-clients-container {
+
+    padding-top: 94px;
+    padding-bottom: 94px;
+    background-color: var(--primary-bg-color)
+}
+
+.regular-clients-header {
+    font-size: 36px;
+    line-height: calc(42/36);
+    text-align: center;
+    letter-spacing: 0.03em;
+    padding-bottom: 50px;
+    color: var(--title-text-color);
+}
+
+.regular-clients-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.regular-clients-inner-container {
+    width: 170px;
+    height: 92px;
+    border: 1px solid var(--icon-primary-color);
+    border-radius: 4px;
+    padding: 16px 32px;
+}
+
+.regular-clients-vector {
+    fill: var(--icon-primary-color);
+}
+
+.regular-clients-inner-container:hover {
+    border-color: var(--accent);
+}
+
+.regular-clients-inner-container:hover .regular-clients-vector {
+    fill: var(--accent);
+}
+
+
 
 /* Footer */
 
@@ -401,10 +535,12 @@ body {
     padding-top: 60px;
     padding-bottom: 60px;
     background: var(--tertiary-bg-color);
+    display: flex;
 }
 
 .footer-logo-link {
     display: block;
+    font-style: normal;
     font-family: 'Raleway', sans-serif;
     text-decoration: none;
     font-size: 26px;
@@ -418,7 +554,10 @@ body {
     color: var(--accent);
 }
 
-.address-container {}
+.address-container {
+
+    margin-right: 70px;
+}
 
 .footer-physical-address {
     text-decoration: none;
@@ -468,6 +607,49 @@ body {
     color: var(--accent);
 }
 
+.footer-socials {
+    width: 206px;
+    height: 80px;
+    margin-top: 12px;
+    margin-left: 70px;
+}
+
+.footer-socials-header {
+    font-size: 14px;
+    line-height: calc(16/14);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--wh-text-color)
+}
+
+.footer-socials-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 44px;
+    height: 44px;
+
+    background-color: rgba(255, 255, 255, 0.1);
+
+    border-radius: 50%;
+}
+
+.footer-socials-icon {
+    fill: var(--wh-text-color);
+}
+
+.footer-socials-link:hover {
+    background-color: var(--accent);
+}
+
+
+
+.footer-socials-link:hover .socials-icon {
+    fill: var(--wh-text-color);
+}
+
+
 /* portfolio */
 
 .portfolio {
@@ -490,12 +672,16 @@ body {
     gap: 30px;
 }
 
-.portfolio-cards {
+.portfolio-cards-text {
     width: 370px;
     padding: 20px 24px;
     border-left: 1px solid #ECECEC;
     border-bottom: 1px solid #ECECEC;
     border-right: 1px solid #ECECEC;
+}
+
+.portfolio-cards:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-list-header {
